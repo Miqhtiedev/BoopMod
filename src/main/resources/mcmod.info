@@ -1,0 +1,16 @@
+[
+{
+  "modid": "boopmod",
+  "name": "BoopMod",
+  "description": "BOOP BAP!",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Miqhtie"],
+  "credits": "MYANMERYAN for original mod",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
