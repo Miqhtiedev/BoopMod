@@ -55,7 +55,7 @@ public class BoopModCommand extends CommandBase {
                     if (args[1].equalsIgnoreCase("list")) {
                         StringBuilder msg = new StringBuilder(EnumChatFormatting.BOLD + "" + EnumChatFormatting.LIGHT_PURPLE + "Whitelisted users to Boop! on join\n");
                         if (BoopMod.instance.whitelistConfig.read().size() == 0) {
-                            msg.append(EnumChatFormatting.YELLOW + "No one ): Add someone by doing /boopwhitelist add (user)");
+                            msg.append(EnumChatFormatting.YELLOW + "No one ): Add someone by doing /boopmod whitelist add (user)");
                         }
                         for (String message : BoopMod.instance.whitelistConfig.read()) {
                             msg.append(EnumChatFormatting.AQUA + " ").append(message).append(".\n");

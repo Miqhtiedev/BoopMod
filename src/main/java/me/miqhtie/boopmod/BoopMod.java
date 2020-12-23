@@ -71,6 +71,4 @@ public class BoopMod {
         // Register Command
         ClientCommandHandler.instance.registerCommand(new BoopModCommand());
     }
-
-
 }
