@@ -1,7 +1,6 @@
 package me.miqhtie.boopmod;
 
 import me.miqhtie.boopmod.commands.BoopModCommand;
-import me.miqhtie.boopmod.commands.BoopWhitelistCommand;
 import me.miqhtie.boopmod.events.ClientRecieveChatEvent;
 import me.miqhtie.boopmod.events.ConnectToServerEvent;
 import me.miqhtie.boopmod.events.DisconnectedFromServerEvent;
@@ -21,10 +20,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 @Mod(
-    modid = BoopMod.MODID,
-    name = BoopMod.NAME,
-    version = BoopMod.VERSION,
-    clientSideOnly = true
+        modid = BoopMod.MODID,
+        name = BoopMod.NAME,
+        version = BoopMod.VERSION,
+        clientSideOnly = true
 )
 
 public class BoopMod {
@@ -41,20 +40,18 @@ public class BoopMod {
 
     public boolean isHypixel = false;
 
-    private Configuration config;
-
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) throws IOException, ClassNotFoundException {
         // Initialize Whitelist Configuration
         File file = new File(event.getModConfigurationDirectory().getPath() + "/boopwhitelistconfig.txt");
         whitelistConfig = new WhitelistConfig(event.getModConfigurationDirectory().getPath() + "/boopwhitelistconfig.txt");
-        if(!file.exists()){
+        if (!file.exists()) {
             file.createNewFile();
-            whitelistConfig.save(new ArrayList<String>());
+            whitelistConfig.save(new ArrayList<>());
         }
 
         // Initialize Regular Config
-        config = new Configuration(event.getSuggestedConfigurationFile());
+        Configuration config = new Configuration(event.getSuggestedConfigurationFile());
         boopModConfig = new BoopModConfig(config);
 
         // Initialize Multithreading
@@ -71,10 +68,7 @@ public class BoopMod {
         EVENT_BUS.register(new DisconnectedFromServerEvent());
         EVENT_BUS.register(new ClientRecieveChatEvent());
 
-        // Register Commands
+        // Register Command
         ClientCommandHandler.instance.registerCommand(new BoopModCommand());
-        ClientCommandHandler.instance.registerCommand(new BoopWhitelistCommand());
     }
-
-
 }

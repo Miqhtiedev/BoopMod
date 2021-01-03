@@ -6,7 +6,7 @@ import net.minecraftforge.fml.common.network.FMLNetworkEvent;
 
 public class DisconnectedFromServerEvent {
     @SubscribeEvent
-    public void disconnectedFromServer(FMLNetworkEvent.ClientDisconnectionFromServerEvent event){
+    public void disconnectedFromServer(FMLNetworkEvent.ClientDisconnectionFromServerEvent event) {
         BoopMod.instance.isHypixel = false;
     }
 }
